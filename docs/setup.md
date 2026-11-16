@@ -11,7 +11,8 @@
    2. `supabase/migrations/0002_security.sql`
    3. `supabase/migrations/0003_logic_and_reports.sql`
    4. `supabase/migrations/0004_storage.sql`
-   5. `supabase/seed.sql` (dữ liệu mẫu, chạy lại bao nhiêu lần cũng được)
+   5. `supabase/migrations/0005_lock_down_functions.sql`
+   6. `supabase/seed.sql` (dữ liệu mẫu, chạy lại bao nhiêu lần cũng được)
 3. Vào **Project Settings → API**, copy:
    - **Project URL**, ví dụ `https://abcdxyz.supabase.co`
    - **anon public** key (project mới có thể gọi là **Publishable key**, dạng `sb_publishable_...`, dùng y như nhau)
@@ -26,9 +27,9 @@
    Địa chỉ web sẽ là:
    - `https://giacamap.github.io/factorykits/` nếu đổi tên
    - `https://giacamap.github.io/my-project1/` nếu giữ tên cũ
-2. **Settings → Secrets and variables → Actions → tab Variables → New repository variable**:
-   - `SUPABASE_URL` = Project URL
-   - `SUPABASE_ANON_KEY` = anon public key
+2. Điền Project URL và anon key vào `frontend/js/config.js` (repo này đã điền sẵn cho project
+   `factorykits`). Hoặc tạo repository variables `SUPABASE_URL` và `SUPABASE_ANON_KEY`
+   (**Settings → Secrets and variables → Actions → Variables**) để workflow tự ghi đè.
 3. **Settings → Pages → Build and deployment → Source: GitHub Actions**
 4. Merge code vào `main` (hoặc vào **Actions → Deploy frontend to GitHub Pages → Run workflow**)
 5. Mở địa chỉ web, **đăng ký tài khoản đầu tiên**: tài khoản này tự động là **admin**

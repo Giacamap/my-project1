@@ -39,8 +39,8 @@ Supabase cho một PostgreSQL thật kèm Auth, Storage và REST API, có gói m
 ## Bắt đầu nhanh
 
 1. Tạo project trên [supabase.com](https://supabase.com) (free)
-2. Mở **SQL Editor**, chạy lần lượt các file trong `supabase/migrations/` (0001 → 0004), rồi chạy `supabase/seed.sql`
-3. Trên GitHub repo: **Settings → Secrets and variables → Actions → Variables**, tạo `SUPABASE_URL` và `SUPABASE_ANON_KEY`
+2. Mở **SQL Editor**, chạy lần lượt các file trong `supabase/migrations/` (0001 → 0005), rồi chạy `supabase/seed.sql`
+3. Điền Project URL + anon key vào `frontend/js/config.js` (đã điền sẵn cho project hiện tại)
 4. **Settings → Pages → Source: GitHub Actions**, rồi merge vào `main`
 5. Mở trang web và **đăng ký tài khoản đầu tiên**: tài khoản này tự động thành **admin**
 
