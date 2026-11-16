@@ -14,6 +14,8 @@
 }
 
 * { box-sizing: border-box; }
+/* Thuộc tính hidden phải thắng mọi display: ... khác (vd .topbar dùng flex). */
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
