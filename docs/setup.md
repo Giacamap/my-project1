@@ -23,10 +23,9 @@
 
 ## 2. Deploy frontend lên GitHub Pages
 
-1. **(Nên làm)** Đổi tên repo thành `factorykits`: **Settings → General → Repository name**.
-   Địa chỉ web sẽ là:
-   - `https://giacamap.github.io/factorykits/` nếu đổi tên
-   - `https://giacamap.github.io/my-project1/` nếu giữ tên cũ
+1. Repo nằm trong Organization `factorykits` với tên đặc biệt `factorykits.github.io`,
+   nên web chạy ở địa chỉ gốc: **https://factorykits.github.io**
+   (repo tên khác, ví dụ `abc`, sẽ chạy ở `https://factorykits.github.io/abc/`)
 2. Điền Project URL và anon key vào `frontend/js/config.js` (repo này đã điền sẵn cho project
    `factorykits`). Hoặc tạo repository variables `SUPABASE_URL` và `SUPABASE_ANON_KEY`
    (**Settings → Secrets and variables → Actions → Variables**) để workflow tự ghi đè.
@@ -69,18 +68,23 @@ npx supabase db reset
 
 Studio local ở http://localhost:54323, lệnh `start` in ra URL và anon key để điền vào `config.js`.
 
-## 4. Gắn tên miền riêng (khi đã mua, ví dụ `factorykits.vn`)
+## 4. Gắn tên miền riêng (khi đã mua, ví dụ `factorykits.app`)
 
 1. Ở nhà cung cấp tên miền, tạo bản ghi DNS:
-   - Dùng subdomain `app.factorykits.vn` (đơn giản nhất): **CNAME** `app` → `giacamap.github.io`
-   - Dùng tên miền gốc `factorykits.vn`: 4 bản ghi **A** trỏ tới
+   - Tên miền gốc `factorykits.app`: 4 bản ghi **A** trỏ tới
      `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `www`: bản ghi **CNAME** `www` → `factorykits.github.io`
 2. GitHub: **Settings → Pages → Custom domain**, nhập tên miền, chờ kiểm tra DNS xong
    rồi bật **Enforce HTTPS**
-3. Supabase: cập nhật **Site URL** và **Redirect URLs** sang tên miền mới
+3. Xác minh tên miền ở **Organization settings → Pages → Verified domains**
+   (chống người khác chiếm tên miền trên GitHub)
+4. Supabase: cập nhật **Site URL** và **Redirect URLs** sang tên miền mới
+
+`factorykits.github.io` sẽ tự chuyển hướng sang tên miền mới. Lưu ý: đuôi `.app` bắt buộc
+HTTPS, nên trang chỉ mở được sau khi GitHub cấp xong chứng chỉ (vài phút đến khoảng 1 giờ).
 
 Frontend dùng đường dẫn tương đối và hash router (`#/board`), nên chạy được cả ở
-`/my-project1/` lẫn ở tên miền gốc mà không cần sửa code.
+đường dẫn con (`/abc/`) lẫn ở tên miền gốc mà không cần sửa code.
 
 ## Giới hạn của gói miễn phí
 
