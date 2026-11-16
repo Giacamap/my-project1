@@ -54,6 +54,7 @@ Hướng dẫn chi tiết, kể cả chạy local và gắn tên miền riêng s
 |---|---|---|
 | 1 | [docs/data-model.md](docs/data-model.md) | Sơ đồ ERD, vì sao thiết kế như vậy, chuẩn hóa, fact và dimension |
 | 2 | [docs/sql-lessons.md](docs/sql-lessons.md) | 20+ bài tập SQL trên chính dữ liệu downtime, có lời giải |
+| 0 | [docs/nhat-ky-du-an.md](docs/nhat-ky-du-an.md) | Nhật ký: dự án được xây dựng thế nào, ai làm gì, bài học rút ra |
 | 3 | Đọc `supabase/migrations/` | Mỗi file có chú thích "Bài học" ở đầu |
 | 4 | Đọc `frontend/js/pages/*.js` | Mỗi trang ghi rõ câu SQL tương ứng với code |
 
