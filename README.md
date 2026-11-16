@@ -1,5 +1,7 @@
 # FactoryKits · Mini-MES ghi nhận downtime
 
+🌐 **https://factorykits.github.io**
+
 Webapp nhỏ để **ghi nhận thời gian dừng máy (downtime)** trong nhà máy, đồng thời là
 một repo để **vừa làm vừa học SQL và data model** trên PostgreSQL thật.
 
